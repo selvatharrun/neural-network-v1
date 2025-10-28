@@ -36,8 +36,9 @@ class Ac_tanh:
         return self.outputs
 
 class loss_CategoricalCrossEntropy:
-    def calculate_loss(self, output, y):
+    def calculate_loss(self, output, y, num_of_classes):
         # support sparse labels (class indices) and one-hot encoded labels
+        y = np.eye(num_of_classes)[y]
         eps = 1e-15
         output_clipped = np.clip(output, eps, 1 - eps)
         if y.ndim == 1:
