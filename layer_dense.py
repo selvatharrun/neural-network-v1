@@ -34,4 +34,14 @@ class Ac_tanh:
     def forward_pass(self, inputs):
         self.outputs = np.divide( np.float_power(euler_num, inputs) - np.float_power(euler_num, -inputs) ,np.float_power(euler_num, inputs) + np.float_power(euler_num, -inputs))
         return self.outputs
-    
+
+class loss_CategoricalCrossEntropy:
+    def calculate_loss(self, output, y):
+        # support sparse labels (class indices) and one-hot encoded labels
+        eps = 1e-15
+        output_clipped = np.clip(output, eps, 1 - eps)
+        if y.ndim == 1:
+            correct_confidences = output_clipped[np.arange(len(output_clipped)), y]
+        else:
+            correct_confidences = np.sum(output_clipped * y, axis=1)
+        return -np.mean(np.log(correct_confidences))
