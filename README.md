@@ -183,37 +183,7 @@ Install Graphviz system package:
 
 ---
 
-## 📚 Key Concepts Implemented
 
-### 1. **Forward Propagation**
-- Matrix multiplication for efficient batch processing
-- Activation functions (ReLU, Softmax, Tanh)
-- Layer stacking and composition
-
-### 2. **Backpropagation**
-- Chain rule for gradient computation
-- Topological sorting of computation graph
-- Gradient accumulation for nodes used multiple times
-
-### 3. **Autograd Magic**
-- Dynamic computation graph construction
-- Automatic gradient tracking through operations
-- Lazy gradient computation (only when `.backward()` is called)
-
-### 4. **Neural Network Architecture**
-```
-Input Layer (features)
-    ↓
-Dense Layer + ReLU
-    ↓
-Dense Layer + ReLU
-    ↓
-Dense Layer + Softmax
-    ↓
-Output (class probabilities)
-```
-
----
 
 ## 🎯 Example: Training on Spiral Dataset
 
@@ -245,33 +215,6 @@ print(f"Loss: {loss}")
 
 ---
 
-## 🔬 What Makes This Different?
-
-1. **Built from scratch** - No high-level frameworks like TensorFlow or PyTorch
-2. **Educational focus** - Clear, commented code showing how everything works
-3. **Dual implementation:**
-   - NumPy for efficient forward propagation
-   - Micrograd for understanding backpropagation
-4. **Visualization** - Graphviz integration to see computation graphs
-5. **Interactive** - Jupyter notebooks for experimentation
-
----
-
-## 🧠 Learning Outcomes
-
-By building this project, you learn:
-
-- ✅ How matrix operations power neural networks
-- ✅ The math behind backpropagation and chain rule
-- ✅ How automatic differentiation engines work
-- ✅ Building computational graphs dynamically
-- ✅ Weight initialization and gradient descent
-- ✅ Activation functions and their purposes
-- ✅ Loss functions for classification
-- ✅ One-hot encoding and categorical data
-- ✅ Vectorization for performance
-
----
 
 ## 📈 Future Improvements
 
